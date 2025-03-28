@@ -49,11 +49,61 @@
 /* about */
 .imageAboutPage {
     width: 100%;
+    margin-top: -50px;
 }
 .imageAboutPage {
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+/* Section Compétences */
+#skills {
+    padding: 2rem 0;
+    background-color: #f9f9f9; /* Couleur douce pour un contraste léger */
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    color: #333; /* Texte plus prononcé */
+    margin-bottom: 60px;
+}
+
+/* Images de compétences */
+.skills-html-css,
+.skills-js,
+.skills-test,
+.skills-react,
+.skills-figma,
+.skills-cy { /* Ajout de .skills-cy ici */
+    height: 200px; /* Taille uniforme pour toutes les compétences */
+    margin: 0 auto 1rem; /* Centre les images et ajoute un espace en bas */
+    display: block; /* Garantit un centrage avec margin auto */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+    transition: transform 0.3s ease-in-out; /* Animation au survol */
+    margin-top: 40px;
+}
+
+/* Effet au survol */
+.skills-html-css:hover,
+.skills-js:hover,
+.skills-test:hover,
+.skills-react:hover,
+.skills-figma:hover,
+.skills-cy:hover { /* Ajout de .skills-cy ici */
+    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Accentue l'ombre au survol */
+}
+
+
+
+/* Texte sous les images */
+#skills p {
+    text-align: center;
+    font-size: 1rem;
+    color: #555; /* Texte légèrement gris */
+    margin-top: 50px;
+}
+
 
 /* skills */
 .skillsText.card {
@@ -84,8 +134,42 @@
 }
 
 /* portfolio */
-#portfolio p {
-    text-align: center;
+.section #portfolio {
+ margin-top: 50px;
+}
+#portfolio h2 {
+    margin-bottom: 50px;   
+}
+/* Images générales dans le portfolio */
+.portfolio-image {
+    max-width: 450px; /* Limite la largeur */
+    border-radius: 8px; /* Arrondit légèrement les coins */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+/* Style spécifique à l'image du projet 1 */
+.projet1 {
+    
+    margin: 50px auto;
+    margin-bottom: 85px;
+    display: flex;
+    justify-content: center;
+    height: 200px;  
+}
+
+/* Style spécifique à l'image du projet 2 */
+.projet2 {
+    
+    margin: 85px auto;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+/* Effet de survol général pour les images du Portfolio */
+.portfolio-image:hover {
+    transform: scale(1.05); /* Agrandit légèrement l'image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre plus marquée */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }
 
 /* contact */
