@@ -23,7 +23,7 @@ function handleNavbarCollapse() {
     });
 }
 
-// Function to dynamically create the Skills section from a JSON file
+
 // Fonction pour créer la section Compétences dynamiquement
 function createSkillsFromJSON() {
     fetch("data/skills.json")
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Function to dynamically create the Portfolio section from a JSON file
+
 // Fonction pour créer la section Portfolio dynamiquement
 function createPortfolioFromJSON() {
     fetch("data/portfolio.json")
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function createProfilePicture() {
     const profileData = {
         id: "profile-picture",
-        image: "images/photo-profil-P12.png",
+        image: "images/photo-profil-P12.webp",
         alt: "Portrait de Clara Aurélie",
     };
 

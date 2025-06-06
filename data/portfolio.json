@@ -1,6 +1,6 @@
 [
     {
-        "image": "image1.png",
+        "image": "image-1.webp",
         "title": "Booki",
         "text": "Création d'un site permettant aux usagers de trouver des hébergements et activités.",
         "link": "https://github.com/Claralyly/P3.git"
@@ -12,7 +12,7 @@
         "link": "https://github.com/Claralyly/P10-TesteurLogiciel_Automatisez_des_tests_pour_une_boutique_en_ligne-main.git"
     },
     {
-        "image": "image3.png",
+        "image": "image3.webp",
         "title": "Kasa",
         "text": "Créez une application web de location immobilière avec React.",
         "link": "https://github.com/Claralyly/P8-TesteurLogiciel_appli_location_immobiliere_React-main.git"
