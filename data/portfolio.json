@@ -2,19 +2,19 @@
     {
         "image": "image1.png",
         "title": "Booki",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "link": "#"
+        "text": "Création d'un site permettant aux usagers de trouver des hébergements et activités.",
+        "link": "https://github.com/Claralyly/P3.git"
     },
     {
-        "image": "image2.png",
-        "title": "Mon Vieux grimoire",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "link": "#"
+        "image": "photo-cy-p12.webp",
+        "title": "Automatisez des tests pour une boutique en ligne",
+        "text": "Test API, smoke tests, choix des scénarios critiques à automatiser.",
+        "link": "https://github.com/Claralyly/P10-TesteurLogiciel_Automatisez_des_tests_pour_une_boutique_en_ligne-main.git"
     },
     {
         "image": "image3.png",
         "title": "Kasa",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "link": "#"
+        "text": "Créez une application web de location immobilière avec React.",
+        "link": "https://github.com/Claralyly/P8-TesteurLogiciel_appli_location_immobiliere_React-main.git"
     }
 ]

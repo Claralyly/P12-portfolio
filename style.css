@@ -72,7 +72,6 @@
 .skills-js,
 .skills-test,
 .skills-react,
-.skills-figma,
 .skills-cy { /* Ajout de .skills-cy ici */
     height: 200px; /* Taille uniforme pour toutes les compétences */
     margin: 0 auto 1rem; /* Centre les images et ajoute un espace en bas */
@@ -88,7 +87,6 @@
 .skills-js:hover,
 .skills-test:hover,
 .skills-react:hover,
-.skills-figma:hover,
 .skills-cy:hover { /* Ajout de .skills-cy ici */
     transform: scale(1.1); /* Agrandit légèrement l'image au survol */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Accentue l'ombre au survol */

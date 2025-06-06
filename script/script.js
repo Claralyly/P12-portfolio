@@ -24,70 +24,78 @@ function handleNavbarCollapse() {
 }
 
 // Function to dynamically create the Skills section from a JSON file
+// Fonction pour créer la section Compétences dynamiquement
 function createSkillsFromJSON() {
-    const container = document.querySelector("#skills .container");
-    let row = document.createElement("div");
-    row.classList.add("row");
-
-    // Load the JSON file
     fetch("data/skills.json")
-        .then((response) => response.json())
-        .then((data) => {
-            data.forEach((item, index) => {
+        .then(response => response.json())
+        .then(data => {
+            const container = document.querySelector("#skills .row");
+            container.innerHTML = ""; // On vide d'abord la section avant de remplir
+
+            data.forEach(item => {
                 const card = document.createElement("div");
-                card.classList.add("col-lg-4", "mt-4");
+                card.classList.add("col-md-4", "mt-4");
+
                 card.innerHTML = `
                     <div class="card skillsText">
                         <div class="card-body">
-                            <img src="./images/${item.image}" />
+                            <a href="${item.link}" target="_blank">
+                                <img src="images/${item.image}" alt="${item.title}" class="skills-image">
+                            </a>
                             <h4 class="card-title mt-3">${item.title}</h4>
                             <p class="card-text mt-3">${item.text}</p>
                         </div>
                     </div>
                 `;
-                row.appendChild(card);
-                if ((index + 1) % 3 === 0 || index === data.length - 1) {
-                    container.appendChild(row);
-                    row = document.createElement("div");
-                    row.classList.add("row");
-                }
+                container.appendChild(card);
             });
-        });
+        })
+        .catch(error => console.error("Erreur de chargement des compétences :", error));
 }
+
+// Appeler la fonction au chargement du document
+document.addEventListener("DOMContentLoaded", () => {
+    createSkillsFromJSON();
+});
+
 
 // Function to dynamically create the Portfolio section from a JSON file
+// Fonction pour créer la section Portfolio dynamiquement
 function createPortfolioFromJSON() {
-    const container = document.querySelector("#portfolio .container");
-    let row = document.createElement("div");
-    row.classList.add("row");
-
     fetch("data/portfolio.json")
-        .then((response) => response.json())
-        .then((data) => {
-            data.forEach((item, index) => {
+        .then(response => response.json())
+        .then(data => {
+            const container = document.querySelector("#portfolio .row");
+            container.innerHTML = ""; // On vide d'abord la section avant de remplir
+
+            data.forEach(item => {
                 const card = document.createElement("div");
-                card.classList.add("col-lg-4", "mt-4");
+                card.classList.add("col-md-6", "mt-4");
+
                 card.innerHTML = `
                     <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/${item.image}" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">${item.title}</h4>
-                        <p class="card-text">${item.text}</p>
-                        <div class="text-center">
-                            <a href="${item.link}" class="btn btn-success">Lien</a>
+                        <a href="${item.link}" target="_blank">
+                            <img class="card-img-top" src="images/${item.image}" alt="${item.title}">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">${item.title}</h4>
+                            <p class="card-text">${item.text}</p>
+                            <div class="text-center">
+                                <a href="${item.link}" class="btn btn-success" target="_blank">Voir le projet</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 `;
-                row.appendChild(card);
-                if ((index + 1) % 3 === 0 || index === data.length - 1) {
-                    container.appendChild(row);
-                    row = document.createElement("div");
-                    row.classList.add("row");
-                }
+                container.appendChild(card);
             });
-        });
+        })
+        .catch(error => console.error("Erreur de chargement du portfolio :", error));
 }
+
+// Appeler la fonction au chargement du document
+document.addEventListener("DOMContentLoaded", () => {
+    createPortfolioFromJSON();
+});
 
 // Function to dynamically insert the profile picture
 function createProfilePicture() {
@@ -163,7 +171,7 @@ function handleLinkClick() {
 // Dynamic greeting message based on the time of day
 document.addEventListener("DOMContentLoaded", () => {
     const hours = new Date().getHours();
-    const message = hours < 12 ? "Bonjour " : hours < 18 ? "Bon après-midi " : "Bonsoir ";
+    const message = hours < 12 ? "Bonjour " : hours >= 18 ? "Bonsoir " : "Bonjour ";
     document.querySelector(".hero_title").textContent = message;
 
     // Call all dynamic functions
