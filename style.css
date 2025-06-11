@@ -104,6 +104,16 @@
 
 
 /* skills */
+.section-box {
+    background-color: rgb(231, 223, 223);
+    border-radius: 25px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+} 
+
+    
+
 .skillsText.card {
     height: 350px;
     cursor: pointer;
@@ -134,11 +144,21 @@
 /* portfolio */
 .section #portfolio {
  margin-top: 50px;
+ display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 #portfolio h2 {
     margin-bottom: 50px;   
 }
 /* Images générales dans le portfolio */
+.container .mt-3 {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+}
 .portfolio-image {
     max-width: 450px; /* Limite la largeur */
     border-radius: 8px; /* Arrondit légèrement les coins */
