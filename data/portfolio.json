@@ -7,8 +7,8 @@
     },
     {
         "image": "cy3.webp",
-        "title": "Automatisez des tests pour une boutique en ligne",
-        "text": "Test API, smoke tests, choix des scénarios critiques à automatiser.",
+        "title": "Automatisez des tests",
+        "text": "Test API, smoke tests, choix des scénarios critiques à automatiser pour une boutique en ligne.",
         "link": "https://github.com/Claralyly/P10-TesteurLogiciel_Automatisez_des_tests_pour_une_boutique_en_ligne-main.git"
     },
     {
@@ -16,5 +16,12 @@
         "title": "Kasa",
         "text": "Créez une application web de location immobilière avec React.",
         "link": "https://github.com/Claralyly/P8-TesteurLogiciel_appli_location_immobiliere_React-main.git"
+    },
+    {
+        "image": "image3.webp",
+        "title": "Kasa",
+        "text": "Créez une application web de location immobilière avec React.",
+        "link": "https://github.com/Claralyly/P8-TesteurLogiciel_appli_location_immobiliere_React-main.git"
     }
+
 ]

@@ -1,28 +1,42 @@
-// Function to add the "navbarDark" class to the navbar on scroll
+// Attendre que le DOM soit chargé avant d'exécuter les fonctions
+document.addEventListener("DOMContentLoaded", () => {
+    handleNavbarScroll();
+    handleNavbarCollapse();
+    createContactSection();
+    createProfilePicture();
+    createSkillsFromJSON();
+    createPortfolioFromJSON();
+    handleLinkClick();
+
+    // Ajouter la classe de conteneur pour centrage
+    const skillsRow = document.querySelector("#skills .row");
+    if (skillsRow) {
+        skillsRow.classList.add("cards-container");
+    }
+
+    // Message de bienvenue dynamique
+    const hours = new Date().getHours();
+    const message = hours < 12 ? "Bonjour " : hours >= 18 ? "Bonsoir " : "Bonjour ";
+    document.querySelector(".hero_title").textContent = message;
+});
+
+// Fonction pour ajouter la classe "navbarDark" lors du scroll
 function handleNavbarScroll() {
     const header = document.querySelector(".navbar");
-    window.onscroll = function () {
-        const top = window.scrollY;
-        if (top >= 100) {
-            header.classList.add("navbarDark");
-        } else {
-            header.classList.remove("navbarDark");
-        }
-    };
-}
 
-// Function to handle navbar collapse on small devices after a click
-function handleNavbarCollapse() {
-    const navLinks = document.querySelectorAll(".nav-item");
-    const menuToggle = document.getElementById("navbarSupportedContent");
-
-    navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            new bootstrap.Collapse(menuToggle).toggle();
-        });
+    window.addEventListener("scroll", () => {
+        header.classList.toggle("navbarDark", window.scrollY >= 100);
     });
 }
 
+// Fonction pour gérer le collapse du menu sur mobile après un clic
+function handleNavbarCollapse() {
+    const menuToggle = new bootstrap.Collapse(document.getElementById("navbarSupportedContent"), { toggle: false });
+
+    document.querySelectorAll(".nav-item").forEach((link) => {
+        link.addEventListener("click", () => menuToggle.toggle());
+    });
+}
 
 // Fonction pour créer la section Compétences dynamiquement
 function createSkillsFromJSON() {
@@ -31,6 +45,7 @@ function createSkillsFromJSON() {
         .then(data => {
             const container = document.querySelector("#skills .row");
             container.innerHTML = ""; // On vide d'abord la section avant de remplir
+            container.classList.add("cards-container"); // Ajout de la classe pour centrage
 
             data.forEach(item => {
                 const card = document.createElement("div");
@@ -52,13 +67,6 @@ function createSkillsFromJSON() {
         })
         .catch(error => console.error("Erreur de chargement des compétences :", error));
 }
-
-// Appeler la fonction au chargement du document
-document.addEventListener("DOMContentLoaded", () => {
-    createSkillsFromJSON();
-});
-
-
 
 // Fonction pour créer la section Portfolio dynamiquement
 function createPortfolioFromJSON() {
@@ -92,12 +100,7 @@ function createPortfolioFromJSON() {
         .catch(error => console.error("Erreur de chargement du portfolio :", error));
 }
 
-// Appeler la fonction au chargement du document
-document.addEventListener("DOMContentLoaded", () => {
-    createPortfolioFromJSON();
-});
-
-// Function to dynamically insert the profile picture
+// Insertion dynamique de la photo de profil
 function createProfilePicture() {
     const profileData = {
         id: "profile-picture",
@@ -113,10 +116,9 @@ function createProfilePicture() {
     container.appendChild(img);
 }
 
-// Function to dynamically create the Contact section with clickable icons
+// Création dynamique de la section Contact
 function createContactSection() {
     const contactData = [
-        
         {
             icon: "fa-regular fa-envelope",
             title: "Email",
@@ -146,7 +148,7 @@ function createContactSection() {
         contactColumn.classList.add("col-lg-4", "mt-4", "contactColumn");
 
         contactColumn.innerHTML = `
-            <a href="${contact.link}" target="_blank" class="icon-link">
+            <a href="${contact.link}" target="_blank" class="icon-link" aria-label="${contact.title}">
                 <i class="${contact.icon} fa-4x"></i>
             </a>
             <h3>${contact.title}</h3>
@@ -156,7 +158,7 @@ function createContactSection() {
     });
 }
 
-// Function to handle link color change after click
+// Fonction pour changer la couleur des liens après clic
 function handleLinkClick() {
     const links = document.querySelectorAll("a");
 
@@ -167,23 +169,3 @@ function handleLinkClick() {
         });
     });
 }
-
-// Dynamic greeting message based on the time of day
-document.addEventListener("DOMContentLoaded", () => {
-    const hours = new Date().getHours();
-    const message = hours < 12 ? "Bonjour " : hours >= 18 ? "Bonsoir " : "Bonjour ";
-    document.querySelector(".hero_title").textContent = message;
-
-    // Call all dynamic functions
-    createProfilePicture();
-    createSkillsFromJSON();
-    createPortfolioFromJSON();
-    createContactSection();
-    handleLinkClick();
-});
-
-// Call the functions to execute the code
-handleNavbarScroll();
-handleNavbarCollapse();
-createSkillsFromJSON();
-createPortfolioFromJSON();
