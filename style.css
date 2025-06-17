@@ -202,3 +202,54 @@ footer {
     padding: 1rem;
     text-align: center;
 }
+
+/* ======= Responsive Design ======= */
+
+
+/* ======= Responsive pour mobile (max-width: 767.98px) ======= */
+@media (max-width: 767.98px) {
+    #profile-picture img {
+        width: 250px; /* Réduit la largeur */
+        height: auto; /* Ajuste la hauteur proportionnellement */
+        margin-top: 10px; /* Espacement par rapport au titre */
+        margin-bottom: 20px; /* Espacement par rapport au texte */
+    }
+    #profile-picture {
+        max-width: 600px; /* Limite la taille globale */
+        display: flex;
+        justify-content: center; /* Centre l'image horizontalement */
+        padding-top: 10px; /* Espace sous le titre */
+        padding-bottom: 20px; /* Espace au-dessus du texte */
+    }
+
+    #contact .container {
+        text-align: center;
+    }
+    #skills .row {
+        display: flex;
+        justify-content: center; /* Centre les cartes horizontalement */
+        flex-wrap: wrap; /* Assure une bonne adaptation sur mobile */
+        gap: 20px; /* Ajoute un espacement uniforme entre les cartes */
+        
+    }
+    
+    
+    #contact .row {
+        display: flex;
+        justify-content: center; /* Centre horizontalement */
+        flex-wrap: wrap; /* Permet un bon affichage sur mobile */
+    }
+    .contactColumn {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centre chaque élément verticalement */
+        gap: 10px; /* Ajoute un espace uniforme entre icône, titre et texte */
+    }
+    
+    /* Footer */
+    footer {
+      font-size: 0.9rem;
+      padding: 0.8rem;
+    }
+ 
+ } 
